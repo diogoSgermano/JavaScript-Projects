@@ -1,0 +1,22 @@
+{{!-- estrutura base do html --}}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germano Parts</title>
+        {{!-- importa o css --}}
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+        {{#if cssFile}}
+        {{!-- Importa o CSS específico da página, se existir --}}
+        <link rel="stylesheet" href="../css/{{cssFile}}">
+        {{/if}}
+</head>
+
+<body>
+        {{{body}}}
+
+    
+</body>
+</html>

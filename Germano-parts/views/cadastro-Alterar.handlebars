@@ -1,0 +1,37 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="title-container">
+                    <h1>Cadastro de Produtos</h1>
+                    <a href="/"><img src="/images/logov2.png"  alt="Logo Germano Parts" class="h1-logo"></a>
+                </div>
+                <form method="POST" action="/editar" enctype="multipart/form-data">
+                <div class="div-codigoProduto">
+                    <h3>Codigo do produto:</h3>
+                    <input type="number" name="codigo" value="{{produto.codigo}}" readonly class="form-control">
+                </div>
+                    
+
+
+                    <input type="text" name="descricao" placeholder="Digite a descrição do produto"class="form-control" value="{{produto.descricao}}" id="codigoProduto">
+                    <input type="text"name="referencia" placeholder="Digite a referência do produto"class="form-control" value="{{produto.referencia}}"> 
+                    <input type="text" name="marca" placeholder="Digite a marca do produto"class="form-control" value="{{produto.marca}}"> 
+                    <input type="number" name="quantidade" placeholder="Digite a quantidade do item" class="form-control" value="{{produto.quantidade}}" required>
+                    <input type="number"name="preco" placeholder="Digite o preço (R$)" step="0.01"class="form-control" value="{{produto.preco}}">
+                    
+                    <img id="imagePreview" src="{{produto.url_foto_produto}}" alt="Pré-visualização da imagem" style="max-width:200px;max-heigth:200px;margin-top: 10px; margin-bottom: 10px;"/ class="img-preview">
+                    <input type="hidden" name="nomeImagem" value="{{produto.url_foto_produto}}">
+
+                    <input type="file" name="imagem" id="imageInput" class="form-control" accept="image/*">
+                    <input type="submit" class="btn btn-primary" value="Alterar">
+                    <a href="/cadastro-produto" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+            
+        </div>
+        
+    </div>
+</main>
+ 
+<script src="/js/image-preview.js"></script>

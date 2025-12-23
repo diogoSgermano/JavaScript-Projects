@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <h1 class="mb-4 text-center" style="color: #112446;">Detalhes do Animal</h1>
+
+  {{#with animal}}
+  <div class="anun">
+    <div class="card mb-4" style="border: 2px solid #1383EE; border-radius: 20px; padding: 20px;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        {{#if foto_url}}
+          <img src="/{{foto_url}}" alt="Foto de {{nome}}" style="width: 250px; height: 250px; border-radius: 20px; object-fit: cover;">
+        {{else}}
+          <img src="/images/placeholder.png" alt="Sem foto" style="width: 250px; height: 250px; border-radius: 20px; object-fit: cover;">
+        {{/if}}
+        
+        <div class="text-center">
+          <h3 style="margin: 10px 0; color: #112446;">{{nome}}</h3>
+          <p style="margin: 4px 0; font-weight: bold;" class="{{#if (eq situacao 'Perdido')}}status-perdido{{else}}status-encontrado{{/if}}">Status: {{situacao}}</p>
+          <p style="margin: 4px 0;"><b>Local:</b> {{ultimo_local}}</p>
+          <p style="margin: 4px 0;"><b>Raça:</b> {{raca}}</p>
+          <p style="margin: 4px 0;"><b>Porte:</b> {{porte}}</p>
+          <p style="margin: 4px 0;"><b>Cor:</b> {{cor}}</p>
+          <p style="margin: 4px 0;"><b>Idade:</b> {{idade}} anos</p>
+          <p style="margin: 4px 0;"><b>Gênero:</b> {{genero}}</p>
+          <p style="margin: 4px 0;"><b>Detalhes:</b> {{detalhes}}</p>
+          <p style="margin: 4px 0;"><b>Contato:</b> {{contato}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{!-- Botões de Ação: Atualizar, Deletar e Comentar --}}
+  <div class="footer-buttons d-flex justify-content-center align-items-center gap-3" style="padding-top: 0px; padding-bottom: 50px;">
+    <a href="/animais/{{id}}/edit" class="btn custom-anunciar-btn"><span style="font-weight:580;">Atualizar</span></a>
+    <form action="/animais/{{id}}?_method=DELETE" method="POST" class="d-inline">
+      <button type="submit" class="btn custom-deletar-btn" onclick="return confirm('Tem certeza que deseja deletar este anúncio?');"><span style="font-weight:580;">Deletar</span></button>
+    </form>
+    <a href="/animais/{{id}}/comentarios" class="btn custom-comentarios-btn"><span style="font-weight:580;">Comentar</span></a>
+  </div>
+  {{>_voltar link="/animais"}}
+  {{/with}}
+</div>

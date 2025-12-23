@@ -1,0 +1,40 @@
+{
+  "name": "achoupet",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "src/server/index.js",
+  "scripts": {
+    "start": "node src/server/index.js",
+    "dev": "nodemon src/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogoSgermano/AchouPet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diogoSgermano/AchouPet/issues"
+  },
+  "homepage": "https://github.com/diogoSgermano/AchouPet#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bootstrap": "^5.3.8",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.1",
+    "method-override": "^3.0.0",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-react": "^7.27.1",
+    "nodemon": "^3.1.10",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  }
+}

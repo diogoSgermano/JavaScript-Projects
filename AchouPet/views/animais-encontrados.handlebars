@@ -1,0 +1,31 @@
+<div class="main-content">
+  <h3 class="mb-5 text-center">Animais encontrados</h3>
+
+  {{!-- O loop #each irá iterar sobre a lista de 'animais' passada pelo servidor --}}
+  <div class="anun">
+    {{#each animais}}
+    <div class="card mb-4" style="border: 2px solid #1383EE; border-radius: 20px; padding: 20px;">
+      <a href="/animais/{{this.id}}" style="text-decoration: none; color: inherit;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <img src="/{{this.foto_url}}" alt="{{this.nome}}" style="width: 120px; height: 120px; border-radius: 20px; object-fit: cover;">
+          <div>
+            <h3 style="margin: 0; color: #112446;">{{this.nome}}</h3>
+            <p class="{{#if (isPerdido this.situacao)}}status-perdido{{else}}status-encontrado{{/if}}" style="margin: 4px 0; font-weight: bold;">
+  Status: {{this.situacao}}
+</p>
+            <p style="margin: 0;">Local: {{this.ultimo_local}}</p>
+          </div>
+        </div>
+      </a>
+      <div style="display:flex; justify-content:flex-end; margin-top:12px;">
+        <a href="/animais/{{this.id}}/comentarios" class="btn custom-comentarios-btn">Comentar</a>
+      </div>
+    </div>
+    {{else}}
+    <p>Nenhum animal anunciado ainda.</p>
+    {{/each}}
+  </div>
+</div>
+
+{{> _filtros}}
+{{> _footer}}

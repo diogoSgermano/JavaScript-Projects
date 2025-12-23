@@ -1,0 +1,28 @@
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="title-container">
+                    <h1>Cadastro de Produtos</h1>
+                    <a href="/"><img src="/images/logov2.png" alt="Logo Germano Parts" class="h1-logo"></a>
+                </div>
+                <form method="POST" action="/cadastrar" enctype="multipart/form-data">
+                    <input type="text" name="descricao" placeholder="Digite a descrição do produto"class="form-control" required>
+                    <input type="text"name="referencia" placeholder="Digite a referência do produto"class="form-control"> 
+                    <input type="text" name="marca" placeholder="Digite a marca do produto"class="form-control"> 
+                    <input type="number" name="quantidade" placeholder="Digite a quantidade do item" class="form-control" required>
+                    <input type="number"name="preco" placeholder="Digite o preço (R$)" step="0.01"class="form-control">
+                    
+                    <img id="imagePreview" src="#" alt="Pré-visualização da imagem" style="display: none; max-width:200px;max-heigth:200px;margin-top: 10px; margin-bottom: 10px;"/ class="img-preview">
+
+                    <input type="file" name="imagem" id="imageInput" class="form-control" accept="image/*">
+                    <input type="submit" class="btn btn-primary" value="Cadastrar">
+                </form>
+            </div>
+            
+        </div>
+        {{>_todos-produtos}}
+    </div>
+</main>
+ 
+<script src="/js/image-preview.js"></script>

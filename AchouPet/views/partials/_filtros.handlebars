@@ -1,0 +1,67 @@
+<div class="divImgFiltros">
+  <button id="btnFiltros" class="btn-filtro">
+    <img src="/images/filtro.png" alt="filtro" class="img-filtro">
+  </button>
+</div>
+
+<!-- Menu de filtros (inicialmente escondido) -->
+<div id="menuFiltros" class="menu-filtros" style="display: none;">
+  <h5>Endereço, cidade ou CEP</h5>
+  <form>
+    <div class="mb-3">
+        <input type="endereco" class="form-control" id="endereco" required>
+    </div>
+  </form>
+  
+  <div class="filtro-section">
+
+    <h5>Espécie</h5>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="cachorro">
+            <label class="form-check-label" for="cachorro">Cachorro</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="gato">
+            <label class="form-check-label" for="gato">Gato</label>
+        </div>
+
+    <h5>Porte</h5>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="pequeno">
+            <label class="form-check-label" for="pequeno">Pequeno</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="medio">
+            <label class="form-check-label" for="medio">Médio</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="grande">
+            <label class="form-check-label" for="grande">Grande</label>
+        </div>
+
+    <h5>Cor</h5>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="branco">
+            <label class="form-check-label" for="branco">Branco</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="preto">
+            <label class="form-check-label" for="preto">Preto</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="marrom">
+            <label class="form-check-label" for="marrom">Marrom</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="pintado">
+            <label class="form-check-label" for="pintado">Pintado</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="caramelo">
+            <label class="form-check-label" for="caramelo">Caramelo</label>
+        </div>
+  </div>
+
+<button class="btn btn-success">Aplicar</button>
+
+</div>

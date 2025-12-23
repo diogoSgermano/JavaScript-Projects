@@ -1,0 +1,102 @@
+
+<div class="container mt-5">
+  <h4 class="mb-5 text-center">{{#if animal.id}}Editar Anúncio{{else}}Criar Anúncio{{/if}}</h4>
+
+  {{!-- O action do formulário e o método serão dinâmicos --}}
+  <form class="anun" action="/animais{{#if animal.id}}/{{animal.id}}?_method=PUT{{/if}}" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="especie">Espécie</label>
+      <select class="form-control" id="especie" name="especie" required>
+        <option value="Cachorro" {{#if (eq animal.especie "Cachorro")}}selected{{/if}}>Cachorro</option>
+        <option value="Gato" {{#if (eq animal.especie "Gato")}}selected{{/if}}>Gato</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="genero">Gênero</label>
+      <select class="form-control" id="genero" name="genero" required>
+        <option value="Macho" {{#if (eq animal.genero "Macho")}}selected{{/if}}>Macho</option>
+        <option value="Fêmea" {{#if (eq animal.genero "Fêmea")}}selected{{/if}}>Fêmea</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="situacao">Situação</label>
+      <select class="form-control" id="situacao" name="situacao" required>
+        <option value="Perdido" {{#if (eq animal.situacao "Perdido")}}selected{{/if}}>Perdido</option>
+        <option value="Encontrado" {{#if (eq animal.situacao "Encontrado")}}selected{{/if}}>Encontrado</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="porte">Porte</label>
+      <select class="form-control" id="porte" name="porte" required>
+        <option value="pequeno" {{#if (eq animal.porte "pequeno")}}selected{{/if}}>Pequeno</option>
+        <option value="medio" {{#if (eq animal.porte "medio")}}selected{{/if}}>Médio</option>
+        <option value="grande" {{#if (eq animal.porte "grande")}}selected{{/if}}>Grande</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="cor">Cor</label>
+      <input type="text" class="form-control" id="cor" name="cor" value="{{animal.cor}}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="foto">Foto</label>
+      <input type="file" class="form-control" id="foto" name="foto" accept="image/*" {{#unless animal.id}}required{{/unless}}>
+      {{#if animal.foto_url}}
+        <p class="mt-2">Foto atual:</p> 
+        <img src="/{{animal.foto_url}}" alt="Foto do animal" style="max-width: 200px; height: auto;">
+        
+        <!-- Campo oculto para enviar o caminho da foto existente de volta ao servidor -->
+        <input type="hidden" name="foto_existente" value="{{animal.foto_url}}">
+      {{/if}}
+    </div>
+
+    <div class="mb-3">
+      <label for="detalhes">Mais detalhes</label>
+      <textarea class="form-control" id="detalhes" name="detalhes" rows="4" required>{{animal.detalhes}}</textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" value="{{animal.nome}}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="idade">Idade</label>
+      <input type="text" class="form-control" id="idade" name="idade" value="{{animal.idade}}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="raca">Raça</label>
+      <input type="text" class="form-control" id="raca" name="raca" value="{{animal.raca}}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="data">Data</label>
+      <input type="date" class="form-control" id="data" name="data" value="{{animal.desaparecido_em}}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="contato">Contato</label>
+      <input type="tel" class="form-control" id="contato" name="contato" value="{{animal.contato}}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="local">Último local</label>
+      <input type="text" class="form-control" id="local" name="local" value="{{animal.ultimo_local}}" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{#if animal.id}}Atualizar{{else}}Publicar{{/if}}</button>
+  </form>
+
+  {{#if animal.id}}
+    <form action="/animais/{{animal.id}}?_method=DELETE" method="POST" class="mt-2">
+      <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar este anúncio?');">Deletar</button>
+    </form>
+  {{/if}}
+
+  {{> _footer}}
+  </div>

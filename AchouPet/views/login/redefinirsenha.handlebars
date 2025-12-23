@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4 campos">
+      <form>
+        <h4 class="mudarsenha">
+            Insira seu e-mail ou número de celular para redefinir a senha
+        </h4>
+        <div class="mb-3">
+          <label for="password" class="form-label">E-mail ou celular </label>
+          <input type="password" class="form-control" id="password" required>
+        </div>
+        {{>_submit link="/novasenha" texto="Continuar" }} 
+        {{>_voltar link="/login/signIn" }} 
+      </form>
+      {{>_conta}} 
+    </div>
+  </div>
+</div>

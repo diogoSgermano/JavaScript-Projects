@@ -1,0 +1,70 @@
+<div class="comments-page">
+  <div class="main-content">
+  <h1 class="title-inicio">Comentários (2)</h1>
+
+  
+
+  {{#with animal}}
+    <!-- Informações do animal -->
+    <div class="inicio-container">
+      <!-- Foto do animal -->
+      <div class="divImg-inicio">
+        <img src="/{{foto_url}}" alt="Foto de {{nome}}" class="img-mulher-inicio">
+      </div>
+
+      <!-- Dados do animal -->
+      <div class="text-container">
+        <h2 style="color: #112446;">{{nome}}</h2>
+        <p>Status: <strong class="{{#if (eq situacao 'Perdido')}}status-perdido{{else}}status-encontrado{{/if}}">{{situacao}}</strong></p>
+        <p>Idade: {{idade}} anos</p>
+        <p>Sexo: {{genero}}</p>
+        <p>Raça: {{raca}}</p>
+        <p>Contato: {{contato}}</p>
+      </div>
+    </div>
+  {{/with}}
+
+  <!-- Comentários -->
+  <div style="margin-top: 40px;">
+    <h3 style="color: #112446;">Comentários</h3>
+
+    <div id="comments-list">
+    <div class="comment-card" data-comment-id="1" style="margin-top: 20px; border: 2px solid #1383EE; border-radius: 20px; padding: 20px; position: relative;">
+      <p><strong>João Silva</strong> <span style="color: #888;">08/09/2025</span></p>
+      <p>Acho que vi ela perto do mercado popular em torno de 15h ontem</p>
+      <div style="margin-top:12px;">
+        <button class="btn custom-comentarios-btn reply-btn" data-comment-id="1">Comentar</button>
+      </div>
+      <!-- container for replies -->
+      <div class="replies-container" style="margin-top:12px;"></div>
+    </div>
+
+    <div class="comment-card" data-comment-id="2" style="margin-top: 20px; border: 2px solid #1383EE; border-radius: 20px; padding: 20px; position: relative;">
+      <p><strong>Leticia G.</strong> <span style="color: #888;">08/09/2025</span></p>
+      <p>Eu também, vi no msm horário</p>
+      <div style="margin-top:12px;">
+        <button class="btn custom-comentarios-btn reply-btn" data-comment-id="2">Comentar</button>
+      </div>
+      <div class="replies-container" style="margin-top:12px;"></div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Adicionar Comentário -->
+  <div style="margin-top: 40px;">
+    <h3 style="color: #112446;">Adicionar um comentário</h3>
+    <form id="adicionar-comentario" action="" method="POST" style="margin-top: 20px;">
+      <div class="mb-3">
+        <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="Escreva seu comentário aqui..." required style="border-radius: 20px;"></textarea>
+      </div>
+      <div class="d-flex justify-content-end" style="margin-top:12px;">
+        <button type="submit" class="btn custom-comentarios-btn"><span style="font-weight:580;">Comentar</span></button>
+      </div>
+    </form>
+  </div>
+  </div>
+
+  {{>_voltar link="/animais"}}
+</div>
+
+<script src="/js/comentarios.js"></script>

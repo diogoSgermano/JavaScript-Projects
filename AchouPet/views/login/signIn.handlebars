@@ -1,0 +1,23 @@
+<div class="containercadastro">
+  <div class="camposred">
+    <div class="col-md-10 col-lg-8 campos">
+      <form action="/login/verificarUsuario" method="POST" id="formEntrar">
+        <div class="mb-3">
+          <label for="email" class="form-label">Insira seu e-mail</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Insira sua senha</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div id="erro-container" style="color: red; margin-bottom: 15px; text-align: center;"></div>
+        {{>_submit texto="Entrar" }}
+        <p class="text-center mt-3">Não tem uma conta? <a href="/login/criarconta">Cadastre-se</a></p>
+      </form>
+    </div>
+  </div>
+{{> _footer}}
+
+<!-- Inclui o script de validação -->
+<script src="/js/validarSenha.js"></script>
+</div>

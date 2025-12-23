@@ -1,0 +1,55 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem;
+}
+form input[type="submit"]{
+    margin-top: 10px;
+}
+
+.div-codigoProduto{
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+#codigo{
+    border: 2px solid black;
+    border-radius: 3px;
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.h1-logo {
+    height: 100px;
+    width: 100px; /* Ajuste a altura conforme necessário */
+}
+
+.img-preview{
+    align-self: center;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.card{
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.textos{
+    display: flex;
+    gap:20px;
+}
+
+.btn-alterar-excluir{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

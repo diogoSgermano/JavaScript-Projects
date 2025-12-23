@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="campos">
+      <!-- Ação do formulário agora inclui o userId na URL -->
+      <form action="/login/criarsenha/{{userId}}" method="post">
+        <div class="mb-3">
+          <label for="password" class="form-label">Crie uma senha</label>
+          <input type="password" class="form-control" id="senha" name="senha" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Repita a senha</label>
+          <input type="password" class="form-control" id="senhaRepetir" name="senhaRepetir">
+        </div>
+        <div id="error-container" style="color: red; margin-bottom: 15px; text-align: center;"></div>
+        {{>_submit link="/opcoes" texto="Próximo" }}   
+        {{>_voltar link="/login/criarconta" }}  
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Inclui o script de validação de senha encapsulado a partir de um arquivo externo -->
+<script src="/js/validarSenha.js"></script>
